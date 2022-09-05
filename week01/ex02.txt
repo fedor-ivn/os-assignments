@@ -1,0 +1,6 @@
+    1  echo "Hello World!" > /dev/null
+    2  jobs
+    3  pwd
+    4  whoami
+    5  hostname
+    6  history > ex02.txt
