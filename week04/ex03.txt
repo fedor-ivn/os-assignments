@@ -1,0 +1,6 @@
+The output of pstree in both experiments resembles a binomial tree. After fork
+is called, the process duplicates itself, thus creates two branches. We notice
+that each ith branch also forks (n - ith) times. 
+
+However, the number of created processes distinguishes. For n = 3, the program
+creates 8 = 2^3 processes. But for n = 5, it creates 32 = 2^5 processes.
