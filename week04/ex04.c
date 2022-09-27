@@ -16,10 +16,16 @@ int main() {
             printf("Exiting the shell... Goodbye!\n");
             return 0;
         }
-        // uses fork(2) to create a child process that
-        // executes the specified shell command,
-        // runs the processes in background.
-        system(cmd);
+        
+        if (cmd[characters - 2] == '&') {
+            cmd[characters - 2] = '\0';
+            if (fork() == 0) {
+                system(cmd);
+                return 0;
+            }
+        } else {
+            system(cmd);
+        }
     }
     return 0;
 }
