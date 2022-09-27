@@ -57,7 +57,7 @@ int main() {
     unsigned long *v = get_random_vector();
 
     unsigned forks_count;
-    printf("Enter the number of threads: ");
+    printf("Enter the number of processes: ");
     scanf("%d", &forks_count);
 
     pid_t *forks = malloc(sizeof(pid_t) * forks_count);
@@ -77,8 +77,7 @@ int main() {
 
     // wait for each child to die
     for (unsigned ith = 0; ith < forks_count; ith++) {
-        while (waitpid(forks[ith], NULL, 0) > 0)
-            ;
+        waitpid(forks[ith], NULL, 0);
     }
     unsigned long aggregated = aggregate_calcs(temp_file, forks_count);
 
