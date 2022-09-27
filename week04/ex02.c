@@ -80,6 +80,7 @@ int main() {
         waitpid(forks[ith], NULL, 0);
     }
     unsigned long aggregated = aggregate_calcs(temp_file, forks_count);
+    fclose(temp_file);
 
     printf("Given:\nu = [");
     print_vector(u);
