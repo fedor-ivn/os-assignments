@@ -1,0 +1,30 @@
+Computation in #1 threads
+
+real	0m7.749s
+user	0m7.656s
+sys	0m0.020s
+
+Computation in #2 threads
+
+real	0m3.985s
+user	0m7.774s
+sys	0m0.137s
+
+Computation in #4 threads
+
+real	0m2.682s
+user	0m8.313s
+sys	0m0.591s
+
+Computation in #10 threads
+
+real	0m2.316s
+user	0m8.319s
+sys	0m0.715s
+
+Computation in #100 threads
+
+real	0m2.606s
+user	0m8.431s
+sys	0m0.590s
+

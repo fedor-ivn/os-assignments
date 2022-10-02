@@ -1,0 +1,7 @@
+Generally speaking, we notice the boost in time perfomance as we increase the
+number of threads. The CPU (user) time spent stays the same since we compute
+primes for the same range. However, wall-clock elapsed (real) time decreases
+till the fourth case (n=10000000, m=10). I suppose that in first three cases the
+threads are executed truly parallel since my machine has enough processor cores.
+But starting with fourth one, threads are executed concurrently, so the real
+time also stops decreasing.

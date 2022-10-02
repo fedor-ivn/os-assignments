@@ -1,0 +1,6 @@
+The results are similar to those obtained in exercise 3, with some inaccuracy.
+Despite that we timely block parts of the code for other threads, the main
+workload that is `is_prime` function is still executed in parallel. Thus, the
+elapsed (real) and CPU (user) time have the same rates of change in both
+experiments. However, the CPU time spent in kernel (sys) has increased, because
+mutexes are kernel objects and require system calls. 

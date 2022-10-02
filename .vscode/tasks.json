@@ -6,8 +6,8 @@
         {
             "label": "Run single file C program",
             "type": "shell",
-            "command": "gcc ${file} -o /tmp/main && /tmp/main",
-            "problemMatcher": [],
+            "command": "gcc -Wall -pthread ${file} -o /tmp/main && /tmp/main",
+            "problemMatcher": []
         }
     ]
 }
