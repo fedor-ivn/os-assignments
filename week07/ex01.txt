@@ -1,0 +1,2 @@
+   text	   data	    bss	    dec	    hex	filename
+  20430	    876	     24	  21330	   5352	/bin/echo
