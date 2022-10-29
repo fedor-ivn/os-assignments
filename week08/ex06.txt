@@ -1,0 +1,9 @@
+# Given
+A machine has 16-bit virtual addresses. Pages are 8 KB. How many entries
+are needed for a single-level linear page table?
+
+# Solution
+1. Page size = 8 KB = 2^13 B
+2. Offset = 13 bits
+3. Bits for page entry number = 16 - 13 = 3 bits
+3. The number of entries = 2^3 = 8 entries

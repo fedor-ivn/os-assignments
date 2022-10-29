@@ -1,0 +1,11 @@
+Foremost, I changed the conditions of experiment to analyze the expected
+behaviour. Specifically, I increased the portion of memory to 1.5 GB.
+The reason was that my machine has 16 GB of memory, so ten allocations of 10 MB
+did not affect `si` and `so` values.
+
+From the experiment in changed conditions, I noticed that `si` and `so` values
+did not change till the 6th iteration. From the 7th iteration, the `so` value
+started to grow. So, the operating system started to _swap out_ to disk since
+all the physical RAM was already allocated. However, `si` value also started to
+grow, maybe because the pages of more prioritized processes were _swapped in_.
+On the last iteration, operating system killed the process.

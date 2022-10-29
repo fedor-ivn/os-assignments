@@ -1,0 +1,4 @@
+Each physical address is strictly mapped to specific memory cell in RAM. In
+contrast, virtual addresses are not strictly mapped to physical memory cells.
+Indeed, the memory cell addressed by a virtual address may not even be presented
+in memory at the moment.
