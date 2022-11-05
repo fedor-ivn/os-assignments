@@ -1,0 +1,26 @@
+Let us consider the runs of two different sequences with 2 page frames.
+
+# 1. Increased ratio
+Content of input.txt: `1 1 1 1 1 1 1 1 1`
+Results:
+    Table size:        2
+          Hits:        8
+        Misses:        1
+Hit/Miss ratio: 8.000000
+
+# 2. Decreased ratio
+Content of input.txt: `1 2 3 4 5 6 7 8 9`
+Results:
+    Table size:        2
+          Hits:        0
+        Misses:        9
+Hit/Miss ratio: 0.000000
+
+In the first case, the ratio increases till 8.0, since the algorithm references
+the same page 9 times. First reference results in 1 miss. The page fault
+occures, so the referenced page is swapped in. The latter references result in 8
+hits.
+
+In the second case, the ratio is decreased till 0.0, since the algorithm
+references different pages each time. Every reference results in a miss, since
+the reference sequence has no repeats.

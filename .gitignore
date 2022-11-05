@@ -1,4 +1,5 @@
 lab*
 week*/main
 .DS_Store
-input.txt
+*.txt
+!ex*.txt
