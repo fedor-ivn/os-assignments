@@ -98,6 +98,7 @@ int main() {
             references = realloc(references, bufsize * sizeof(page_t));
         }
     }
+    fclose(input_file);
 
     unsigned hits = aging_algorithm_hits(table_len, references, len),
              misses = len - hits;
