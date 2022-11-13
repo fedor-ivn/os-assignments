@@ -1,0 +1,19 @@
+Bits, after removing the execute permission from everyone: -rw-r--r--
+
+Bits, after granting all permissions to only the owner and others: -rwxr--rwx
+
+Bits, after making group permissions equal to user permissions: -rwxrwxrwx
+
+Questions:
+1. What does 660 mean?
+    * owner and owner's group have read + write permissions.
+        * r + w = 0b100 + 0b010 = 0b110 = 6.
+2. What does 775 mean?
+    * owner and owner's group have read + write + execute permissions.
+        * r + w + x = 0b100 + 0b010 + 0b001 = 0b111 = 7.
+    * everyone else has read + execute permission.
+        * r + x = 0b100 + 0b001 = 0b101 = 5.
+3. What does 777 mean?
+    * owner, owner's group, and everyone else have read + write + execute
+      permissions.
+
