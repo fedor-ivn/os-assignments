@@ -13,15 +13,6 @@ typedef struct {
     char *name;
 } INodeAndName;
 
-bool is_valid(char *name) {
-    if (strlen(name) == 1 && name[0] == '.') {
-        return false;
-    } else if (strlen(name) == 2 && name[0] == '.' && name[1] == '.') {
-        return false;
-    }
-    return true;
-}
-
 int main() {
     DIR *directory = opendir(DIRECTORY_PATH);
 
@@ -29,7 +20,8 @@ int main() {
     unsigned size = 0;
     struct dirent *entry;
     while ((entry = readdir(directory)) != NULL) {
-        if (!is_valid(entry->d_name)) {
+        if (strcmp(entry->d_name, ".") == 0 ||
+            strcmp(entry->d_name, "..") == 0) {
             continue;
         }
         struct stat buf;
