@@ -4,3 +4,6 @@ week*/main
 *.txt
 !*ex*.txt
 !file.txt
+lofsdisk
+lofs.img
+ex02.out
