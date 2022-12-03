@@ -8,10 +8,10 @@
             "type": "lldb",
             "request": "launch",
             "name": "Debug",
-            "program": "${workspaceFolder}/week09/main",
-            "stdio": ["stdio.txt"],
+            "program": "${workspaceFolder}/main",
+            "stdio": ["input.txt"],
             "args": [],
-            "cwd": "${workspaceFolder}/week09"
+            "cwd": "${workspaceFolder}"
         }
     ]
 }

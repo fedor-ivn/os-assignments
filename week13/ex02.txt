@@ -1,0 +1,39 @@
+The recovery strategy is when the OS aknowledges that deadlocks occur. The idea
+is to let deadlocks happen, but then detect and resolve them ASAP. The advantage
+of this approach is that the processes are not required to care about how many
+of resources they will use along the execution. However, such a strategy has its
+disadvantages. To recover, one approach is to transfer the resource from one
+process to another, but saving the state of a deprived process may be
+complicated. Another approach is to kill the process and simly re-run, yet in
+many cases such action is harmful. To sum up, one may use the recovery strategy
+if: 1. the processes have no knowledge about resourse needs in advance (this is
+a big advantage, as you will see), 2. either the resources could be preempted or
+the processes could be re-runned.
+
+While deadlock detecton is purely implementable, resolving deadlocks is still
+problematic. Thus, the deadlock avoidance may seem a good strategy. The idea is
+to not let the execution go into deadlock by checking that the state of the
+system is maintained safe. However, this strategy requires the processes to be
+aware of resource needs in advance. In brief, one may ignore this strategy
+since the last requirement is very hard to satisfy, for modern systems at least.
+
+So, avoiding deadlocks is actually impossible. Nevertheless, one could try the
+prevention strategy. The idea is to "attack" one of four resource deadlock
+conditions. 
+
+Unfortunatelly, hold-and-wait condition is unresolvable since the idea requires
+to lock all the necessary resources when the process starts, e.g to be aware of
+resource needs like in deadlock avoidance. For circular wait condition, a
+solution would be the ordering of resources. However, this ordering highly
+likely will not satisfy all the processes. Simply speaking, bypassing
+hold-and-wait and circular wait conditions is almost impossible to implement.
+
+However, attacking other two conditions is possible. To prevent mutual
+exclusion, resources need to be unshared. One may use this strategy if can
+create single entrypoints for shared resources. Bypassing no-preemption
+condition is actually a recovery strategy with a different name. Thus, one may
+apply this strategy in the same case.
+
+
+
+
