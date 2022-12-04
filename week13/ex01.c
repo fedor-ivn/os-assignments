@@ -138,13 +138,37 @@ void banker_algorithm(Input *input, unsigned **locked, unsigned *len) {
     free(is_completable);
 }
 
+bool is_valid_input(Input *input) {
+    for (unsigned jth = 0; jth < input->resources_count; jth++) {
+        unsigned sum = 0;
+        for (unsigned ith = 0; ith < input->processes_count; ith++) {
+            sum += input->allocation_matrix[ith][jth];
+        }
+        if (sum + input->available_resources[jth] !=
+            input->existing_resources[jth]) {
+            return false;
+        }
+    }
+    return true;
+}
+
 int main() {
     FILE *input = fopen(INPUT_FILENAME, "r");
     Input *parsed = malloc(sizeof(Input));
     parse_input(input, parsed);
 
+    
     if (parsed == NULL) {
-        printf("Error occured\n");
+        printf("Error occured! Invalid input format.\n");
+        fclose(input);
+        free_input(parsed);
+        return 1;
+    }
+
+    if (!is_valid_input(parsed)) {
+        printf("Error occured! Invalid input format.\n");
+        fclose(input);
+        free_input(parsed);
         return 1;
     }
 
